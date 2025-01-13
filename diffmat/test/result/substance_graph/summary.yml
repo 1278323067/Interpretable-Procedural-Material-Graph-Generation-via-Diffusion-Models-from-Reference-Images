@@ -1,0 +1,71 @@
+name: substance_graph
+nodes:
+  shape_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 1
+      seed: 0
+      pattern: square
+      variation: 0.0
+      scale: 1.0
+      size:
+      - 0.1899999976158142
+      - 0.22999998927116394
+      angle: 0.0
+      rotation_45: false
+  gradient_0:
+    input:
+    - shape_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      anchors:
+      - - 0.0
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+      - - 0.5218150019645691
+        - 0.08359193801879883
+        - 0.015075385570526123
+        - 1.0
+        - 1.0
+      mode: color
+      linear_interp: true
+  basecolor:
+    input:
+    - gradient_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+param:
+  Tiling: 1
+  levelinlow: 0.17000000178813934
+  Tiling_1: 1
+  color_variance: 1.0
+  Rotation: false
+  levelinmid: 0.5

@@ -1,0 +1,1368 @@
+name: brick_wall
+nodes:
+  brick_generator_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      bricks: dynamic
+      bevel: dynamic
+      keep_ratio: true
+      gap: dynamic
+      middle_size:
+      - 0.5099999904632568
+      - 0.4899999797344208
+      height: dynamic
+      slope: dynamic
+      offset:
+      - 0.5
+      - 0.0
+  fractal_sum_base_0:
+    input: []
+    param: {}
+  clouds_2_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.0
+  gaussian_noise_0:
+    input: []
+    param: {}
+  fractal_sum_base_1:
+    input: []
+    param: {}
+  clouds_2_1:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.0
+  bnw_spots_3_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.0
+  gaussian_noise_1:
+    input: []
+    param: {}
+  fractal_sum_base_2:
+    input: []
+    param: {}
+  cells_2_0:
+    input: []
+    param: {}
+  clouds_2_2:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.0
+  fluid_0:
+    input: []
+    param: {}
+  clouds_2_3:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.0
+  uniform_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      mode: color
+      rgba: dynamic
+  uniform_1:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      mode: color
+      rgba: dynamic
+  levels_0:
+    input:
+    - brick_generator_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low: 0.0
+      in_mid: 0.5
+      in_high:
+      - 0.7639405131340027
+      - 0.7639405131340027
+      - 0.7639405131340027
+      - 1.0
+      out_low:
+      - 0.1542750895023346
+      - 0.1542750895023346
+      - 0.1542750895023346
+      - 0.0
+      out_high:
+      - 0.589219331741333
+      - 0.589219331741333
+      - 0.589219331741333
+      - 1.0
+  levels_1:
+    input:
+    - brick_generator_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.0357142873108387
+      - 0.0357142873108387
+      - 0.0357142873108387
+      - 0.0
+      in_mid:
+      - 0.7307692170143127
+      - 0.7307692170143127
+      - 0.7307692170143127
+      - 0.5
+      in_high:
+      - 0.13345864415168762
+      - 0.13345864415168762
+      - 0.13345864415168762
+      - 1.0
+      out_low: 0.0
+      out_high: 1.0
+  slope_blur_grayscale_0:
+    input:
+    - clouds_2_0
+    - fractal_sum_base_0_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      samples: 29
+      mode: blur
+      intensity: 0.5099999904632568
+  slope_blur_grayscale_1:
+    input:
+    - clouds_2_1
+    - fractal_sum_base_1_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      samples: 30
+      mode: blur
+      intensity: 0.5099999904632568
+  directionalwarp_2:
+    input:
+    - bnw_spots_3_0
+    - gaussian_noise_1_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 10.59999942779541
+      angle: -0.8193610906600952
+  slope_blur_grayscale_2:
+    input:
+    - cells_2_0_output
+    - fractal_sum_base_2_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      samples: 28
+      mode: min
+      intensity: 0.17000000178813934
+  levels_6:
+    input:
+    - clouds_2_2
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.14312267303466797
+      - 0.14312267303466797
+      - 0.14312267303466797
+      - 0.0
+      in_mid:
+      - 0.8267715573310852
+      - 0.8267715573310852
+      - 0.8267715573310852
+      - 0.5
+      in_high:
+      - 0.6152416467666626
+      - 0.6152416467666626
+      - 0.6152416467666626
+      - 1.0
+      out_low:
+      - 0.1282527893781662
+      - 0.1282527893781662
+      - 0.1282527893781662
+      - 0.0
+      out_high: 1.0
+  levels_9:
+    input:
+    - fluid_0_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low: 0.0
+      in_mid: 0.5
+      in_high: 1.0
+      out_low: 0.0
+      out_high:
+      - 0.7424812316894531
+      - 0.7424812316894531
+      - 0.7424812316894531
+      - 1.0
+  blur_0:
+    input:
+    - levels_1
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 0.0
+  invert_grayscale_0:
+    input:
+    - levels_1
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_switch: true
+  directionalwarp_0:
+    input:
+    - slope_blur_grayscale_0
+    - gaussian_noise_0_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 21.18000030517578
+      angle: 0.0
+  directionalwarp_1:
+    input:
+    - slope_blur_grayscale_1
+    - fractal_sum_base_1_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 24.94999885559082
+      angle: 0.0
+  levels_4:
+    input:
+    - directionalwarp_2
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low: 0.0
+      in_mid: 0.5
+      in_high: 1.0
+      out_low:
+      - 0.1728624552488327
+      - 0.1728624552488327
+      - 0.1728624552488327
+      - 0.0
+      out_high:
+      - 0.8531598448753357
+      - 0.8531598448753357
+      - 0.8531598448753357
+      - 1.0
+  directionalwarp_3:
+    input:
+    - slope_blur_grayscale_2
+    - fractal_sum_base_2_output
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 16.68000030517578
+      angle: 0.0
+  warp_0:
+    input:
+    - levels_9
+    - clouds_2_3
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 0.10000000149011612
+  levels_8:
+    input:
+    - blur_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.0
+      in_mid: 0.5
+      in_high:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      out_low: 0.0
+      out_high:
+      - 0.8214285969734192
+      - 0.8214285969734192
+      - 0.8214285969734192
+      - 1.0
+  levels_2:
+    input:
+    - directionalwarp_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.7862453460693359
+      - 0.7862453460693359
+      - 0.7862453460693359
+      - 0.0
+      in_mid:
+      - 0.4272727072238922
+      - 0.4272727072238922
+      - 0.4272727072238922
+      - 0.5
+      in_high:
+      - 0.3773234188556671
+      - 0.3773234188556671
+      - 0.3773234188556671
+      - 1.0
+      out_low:
+      - 0.12593984603881836
+      - 0.12593984603881836
+      - 0.12593984603881836
+      - 0.0
+      out_high:
+      - 0.8853383660316467
+      - 0.8853383660316467
+      - 0.8853383660316467
+      - 1.0
+  levels_3:
+    input:
+    - directionalwarp_1
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.21003717184066772
+      - 0.21003717184066772
+      - 0.21003717184066772
+      - 0.0
+      in_mid:
+      - 0.5391303896903992
+      - 0.5391303896903992
+      - 0.5391303896903992
+      - 0.5
+      in_high:
+      - 0.5594795346260071
+      - 0.5594795346260071
+      - 0.5594795346260071
+      - 1.0
+      out_low:
+      - 0.3475836515426636
+      - 0.3475836515426636
+      - 0.3475836515426636
+      - 0.0
+      out_high:
+      - 0.8234200477600098
+      - 0.8234200477600098
+      - 0.8234200477600098
+      - 1.0
+  histogram_scan_2:
+    input:
+    - levels_4
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_position: false
+      position: dynamic
+      contrast: dynamic
+  levels_5:
+    input:
+    - directionalwarp_3
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.49628251791000366
+      - 0.49628251791000366
+      - 0.49628251791000366
+      - 0.0
+      in_mid: 0.5
+      in_high:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      out_low: 0.0
+      out_high: 1.0
+  directionalwarp_4:
+    input:
+    - warp_0
+    - clouds_2_3
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 9.229999542236328
+      angle: -0.07005560398101807
+  histogram_scan_0:
+    input:
+    - levels_2
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_position: false
+      position: dynamic
+      contrast: dynamic
+  histogram_scan_1:
+    input:
+    - levels_3
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_position: false
+      position: dynamic
+      contrast: dynamic
+  histogram_scan_3:
+    input:
+    - levels_5
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_position: false
+      position: dynamic
+      contrast: 0.5099999904632568
+  blur_hq_grayscale_0:
+    input:
+    - directionalwarp_4
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      high_quality: false
+      intensity: 1.5999999046325684
+  blend_0:
+    input:
+    - histogram_scan_0
+    - levels_0
+    - blur_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: screen
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  blend_3:
+    input:
+    - levels_6
+    - histogram_scan_3
+    - null
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: subtract
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  levels_10:
+    input:
+    - blur_hq_grayscale_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low: 0.0
+      in_mid:
+      - 0.6597744226455688
+      - 0.6597744226455688
+      - 0.6597744226455688
+      - 0.5
+      in_high: 1.0
+      out_low:
+      - 0.3251879811286926
+      - 0.3251879811286926
+      - 0.3251879811286926
+      - 0.0
+      out_high: 1.0
+  blend_1:
+    input:
+    - histogram_scan_1
+    - blend_0
+    - blur_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: multiply
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  levels_7:
+    input:
+    - blend_3
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.0
+      in_mid: 0.5
+      in_high:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+      out_low: 0.0
+      out_high:
+      - 0.19736842811107635
+      - 0.19736842811107635
+      - 0.19736842811107635
+      - 1.0
+  histogram_scan_4:
+    input:
+    - levels_10
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_position: false
+      position: dynamic
+      contrast: 0.0
+  blend_2:
+    input:
+    - histogram_scan_2
+    - blend_1
+    - blur_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: subtract
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 0.25999999046325684
+  blend_4:
+    input:
+    - levels_7
+    - blend_2
+    - blur_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: screen
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  blend_5:
+    input:
+    - histogram_scan_4
+    - blend_4
+    - levels_8
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: copy
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  gradient_0:
+    input:
+    - blend_5
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      anchors:
+      - - 0.0
+        - 0.6705882549285889
+        - 0.6392157077789307
+        - 0.5921568870544434
+        - 1.0
+      - - 0.07894736528396606
+        - 0.6470588445663452
+        - 0.615686297416687
+        - 0.572549045085907
+        - 1.0
+      - - 0.1315789520740509
+        - 0.7372549176216125
+        - 0.7058823704719543
+        - 0.6627451181411743
+        - 1.0
+      - - 0.15789473056793213
+        - 0.658823549747467
+        - 0.6274510025978088
+        - 0.5843137502670288
+        - 1.0
+      - - 0.21052631735801697
+        - 0.7529411911964417
+        - 0.7215686440467834
+        - 0.6784313917160034
+        - 1.0
+      - - 0.2631579041481018
+        - 0.6470588445663452
+        - 0.615686297416687
+        - 0.572549045085907
+        - 1.0
+      - - 0.28947368264198303
+        - 0.686274528503418
+        - 0.6509804129600525
+        - 0.6117647290229797
+        - 1.0
+      - - 0.31578946113586426
+        - 0.5372549295425415
+        - 0.501960813999176
+        - 0.47058823704719543
+        - 1.0
+      - - 0.34210526943206787
+        - 0.7607843279838562
+        - 0.7254902124404907
+        - 0.6941176652908325
+        - 1.0
+      - - 0.42105263471603394
+        - 0.6627451181411743
+        - 0.6352941393852234
+        - 0.5882353186607361
+        - 1.0
+      - - 0.4736842215061188
+        - 0.7921568751335144
+        - 0.7686274647712708
+        - 0.7176470756530762
+        - 1.0
+      - - 0.5263158082962036
+        - 0.6666666865348816
+        - 0.6470588445663452
+        - 0.6039215922355652
+        - 1.0
+      - - 0.7105263471603394
+        - 0.7372549176216125
+        - 0.7254902124404907
+        - 0.7058823704719543
+        - 1.0
+      - - 0.7631579041481018
+        - 0.6549019813537598
+        - 0.6431372761726379
+        - 0.6235294342041016
+        - 1.0
+      - - 0.7894737124443054
+        - 0.7254902124404907
+        - 0.7137255072593689
+        - 0.6941176652908325
+        - 1.0
+      - - 0.8421052694320679
+        - 0.615686297416687
+        - 0.6117647290229797
+        - 0.5921568870544434
+        - 1.0
+      - - 0.9473684430122375
+        - 0.7686274647712708
+        - 0.7647058963775635
+        - 0.7490196228027344
+        - 1.0
+      - - 0.9736841917037964
+        - 0.7803921699523926
+        - 0.7803921699523926
+        - 0.7607843279838562
+        - 1.0
+      mode: color
+      linear_interp: true
+  gradient_1:
+    input:
+    - blend_5
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      anchors:
+      - - 0.0
+        - 0.8117647171020508
+        - 0.6352941393852234
+        - 0.4745098054409027
+        - 1.0
+      - - 0.043478261679410934
+        - 0.8745098114013672
+        - 0.6784313917160034
+        - 0.5098039507865906
+        - 1.0
+      - - 0.1304347813129425
+        - 0.8196078538894653
+        - 0.6039215922355652
+        - 0.4313725531101227
+        - 1.0
+      - - 0.17391304671764374
+        - 0.9607843160629272
+        - 0.6823529601097107
+        - 0.45098039507865906
+        - 1.0
+      - - 0.260869562625885
+        - 0.9137254953384399
+        - 0.6352941393852234
+        - 0.4156862795352936
+        - 1.0
+      - - 0.30434784293174744
+        - 0.7098039388656616
+        - 0.529411792755127
+        - 0.364705890417099
+        - 1.0
+      - - 0.3913043439388275
+        - 0.8823529481887817
+        - 0.6235294342041016
+        - 0.4313725531101227
+        - 1.0
+      - - 0.695652186870575
+        - 0.772549033164978
+        - 0.6039215922355652
+        - 0.4627451002597809
+        - 1.0
+      - - 0.8260869979858398
+        - 0.8235294222831726
+        - 0.658823549747467
+        - 0.5176470875740051
+        - 1.0
+      - - 0.95652174949646
+        - 0.843137264251709
+        - 0.6274510025978088
+        - 0.45098039507865906
+        - 1.0
+      mode: color
+      linear_interp: true
+  normal_0:
+    input:
+    - blend_5
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      normal_format: gl
+      use_input_alpha: false
+      intensity: 2.799999952316284
+  multi_switch_0:
+    input:
+    - gradient_0
+    - gradient_1
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      input_number: 2
+      input_selection: dynamic
+  curvature_smooth_0:
+    input:
+    - normal_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      normal_format: dx
+  blend_6:
+    input:
+    - uniform_0
+    - multi_switch_0
+    - invert_grayscale_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: copy
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 1.0
+  levels_11:
+    input:
+    - curvature_smooth_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      in_low:
+      - 0.9116541147232056
+      - 0.9116541147232056
+      - 0.9116541147232056
+      - 0.0
+      in_mid: 0.5
+      in_high:
+      - 0.11090225726366043
+      - 0.11090225726366043
+      - 0.11090225726366043
+      - 1.0
+      out_low:
+      - 0.15225563943386078
+      - 0.15225563943386078
+      - 0.15225563943386078
+      - 0.0
+      out_high:
+      - 0.847744345664978
+      - 0.847744345664978
+      - 0.847744345664978
+      - 1.0
+  blend_7:
+    input:
+    - uniform_1
+    - blend_6
+    - levels_11
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      blending_mode: copy
+      cropping:
+      - 0.0
+      - 1.0
+      - 0.0
+      - 1.0
+      opacity: 0.14000000059604645
+  hsl_0:
+    input:
+    - blend_7
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      hue: dynamic
+      saturation: dynamic
+      lightness: dynamic
+  sharpen_0:
+    input:
+    - hsl_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      intensity: 0.09999999403953552
+  basecolor:
+    input:
+    - sharpen_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+  normal:
+    input:
+    - normal_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+  roughness:
+    input:
+    - levels_11
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+param:
+  Variation_color: 1
+  hue: 0.5
+  saturation: 0.5
+  luminosity: 0.5
+  dirt_level: 0.5
+  dirt_contrast: 0.5
+  grunge_amount: 0.3400000035762787
+  edges_masking: 0.5
+  grunge_scale: 1
+  Color_dirt:
+  - 0.18965500593185425
+  - 0.11899500340223312
+  - 0.07916039973497391
+  - 1.0
+  Bricks_amount:
+  - 3
+  - 8
+  Brick_Gap:
+  - 0.029999999329447746
+  - 0.07999999821186066
+  Brick_Height:
+  - 0.49000000953674316
+  - 0.7599999904632568
+  - 0.5399999618530273
+  - 0.0
+  Brick_Bevel:
+  - 0.029999999329447746
+  - 0.029999999329447746
+  - 0.0
+  - 0.0
+  Brick_Slope:
+  - -0.4399999976158142
+  - 0.28999996185302734
+  - 0.5299999713897705
+  - 0.4500000476837158
+  Brick_Offset:
+  - 0.5400000214576721
+  - 0.09000000357627869
+  Surface_range: 0.18000000715255737
+  Surface_position: 0.5099999904632568
+  Groots_Position: 0.5099999904632568
+  Groots_Contrast: 0.0
+  Brump_Position: 0.4300000071525574
+  Brump_Contrast: 0.0
+  Cracks_size: 5
+  Cracks_edge: 0.07000000029802322
+  Cracks_Amount: 0.6800000071525574
+  Cement_Position: 0.4300000071525574
+  Between_bricks_Color:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 1.0

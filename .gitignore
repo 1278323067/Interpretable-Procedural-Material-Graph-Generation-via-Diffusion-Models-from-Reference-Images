@@ -1,0 +1,12 @@
+wandb
+output/
+*.pth
+*.pt
+experiment/output
+RADAM/
+rq_vae_transformer/
+StrDiffusion/
+SVBRDF-Proceduralization/
+*.safetensors
+diffusers_1/
+*.bin
