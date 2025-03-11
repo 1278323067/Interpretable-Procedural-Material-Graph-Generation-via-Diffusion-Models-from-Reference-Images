@@ -3,6 +3,8 @@ output/
 *.pth
 *.pt
 experiment/output
+experiment/mask_emb
+experiment/texture_transformer
 RADAM/
 rq_vae_transformer/
 StrDiffusion/
