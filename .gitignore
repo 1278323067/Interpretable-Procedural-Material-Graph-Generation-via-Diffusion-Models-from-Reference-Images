@@ -10,3 +10,4 @@ SVBRDF-Proceduralization/
 *.safetensors
 diffusers_1/
 *.bin
+**/__pycache__/

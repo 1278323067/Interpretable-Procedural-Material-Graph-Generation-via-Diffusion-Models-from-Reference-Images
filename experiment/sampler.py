@@ -1,8 +1,8 @@
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = "3"
-os.environ["http_proxy"] = "http://10.10.115.13:7897"
-os.environ["https_proxy"] = "http://10.10.115.13:7897"
+os.environ["http_proxy"] = "http://172.29.197.144:7890"
+os.environ["https_proxy"] = "http://172.29.197.144:7890"
 import timm 
 import argparse 
 import pickle
@@ -11,10 +11,10 @@ import torch
 from pathlib import Path
 from PIL import  Image
 import torchvision.transforms as transforms
-from texture_diffusion.model import img_embedding
 from diffusers import UNet2DConditionModel,AutoencoderKL,DDIMScheduler,StableDiffusionXLInpaintPipeline
 from transformers import CLIPVisionModelWithProjection,CLIPImageProcessor
 from texture_diffusion.custom_pipeline import StableDiffusionXLCustomPipeline
+from texture_diffusion.model import img_embedding
 from safetensors.torch import load_file
 import subprocess
 import numpy as np 
@@ -24,6 +24,7 @@ import yaml
 import io
 import requests
 import sys
+import time
 sys.path.append("/home/x_lv/texture/diffmat")
 from  diffmat.translator.util import  (NODE_CATEGORY_LUT,CONFIG_DIR)
 from diffmat.core.material import functional as F, noise as N
@@ -381,7 +382,10 @@ def node_process(args,utils,pipe,node_queue,node_list):
                 ada_model=list(ada.rglob("*"))[0]
                 model_=torch.load(ada_model)
                 img_emb_model.load_state_dict(model_)
+                start_time = time.time()
                 image_output = pipe(node.image,device,dtype,img_emb_model=img_emb_model)[0]
+                end_time = time.time()
+                print(f"total time:{end_time - start_time}")
                 node_=Node(image_output,utils)
                 
                 
@@ -472,7 +476,7 @@ if __name__== "__main__":
     parse.add_argument("--cls_model",type=str,default="swinv2_base_window12to24_192to384.ms_in22k_ft_in1k")  #resnet50 #swinv2_base_window12to24_192to384.ms_in22k_ft_in1k #convnextv2_base.fcmae_ft_in22k_in1k_384
     parse.add_argument("--cls_model_pretrained",type=str,default="/home/x_lv/texture/experiment/classfier_ckptswinv2_base_window12to24_192to384.ms_in22k_ft_in1k_type:4_False_epoch:3_96.93457097577542.pth")
     parse.add_argument("--node_type_path",type=str,default="/home/x_lv/texture/node_type.pkl")
-    parse.add_argument("--image_input",type=str,default="/work/imc_lab/x_lv/output/final_dataset/origin.png")
+    parse.add_argument("--image_input",type=str,default="/work/imc_lab/x_lv/output/final_dataset/22.png")
    
     args=parse.parse_args()
     if not os.path.exists("/home/x_lv/texture/experiment/mask_emb/"):
@@ -526,7 +530,7 @@ if __name__== "__main__":
                         image_= Image.fromarray(x, mode='L').convert("RGB")
     else:
         image_ =image_.convert("RGB")
-    node_first=Node(image_,utils,"dyngradient",is_refiner=False)
+    node_first=Node(image_,utils,None,is_refiner=False) #"dyngradient"
     image_inqueue(node_queue,node_list,node_first)
     
 
