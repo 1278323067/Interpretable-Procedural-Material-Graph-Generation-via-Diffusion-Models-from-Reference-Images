@@ -1,0 +1,139 @@
+name: substance_graph
+nodes:
+  shape_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 1
+      seed: 0
+      pattern: square
+      variation: 0.0
+      scale: 0.800000011920929
+      size:
+      - 1.0
+      - 0.6666666865348816
+      angle: 0.0
+      rotation_45: false
+  tile_generator_0:
+    input:
+    - null
+    - shape_0
+    - null
+    - null
+    - null
+    - null
+    - null
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 6
+      x_num: 3
+      y_num: 5
+      pattern: image
+      input_number: 1
+      input_distribution: random
+      pattern_specific:
+      - 0.0
+      - 0.0
+      input_filter_mode: nearest
+      fixed_rotation: 0
+      fixed_rotation_random: 0.0
+      quincunx_flip: false
+      symmetry_random: 0.0
+      symmetry_random_mode: both
+      size_mode: interstice
+      middle_size:
+      - 0.5
+      - 0.5
+      interstice:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      size:
+      - 0.0
+      - 0.0
+      size_absolute:
+      - 0.0
+      - 0.0
+      size_pixel:
+      - 0.0
+      - 0.0
+      size_random:
+      - 0.0
+      - 0.0
+      scale: 0.9000000357627869
+      scale_random: 0.0
+      scale_random_seed: 0
+      offset: 0.4000000059604645
+      offset_random: 0.0
+      offset_random_seed: 0
+      vertical_offset: false
+      position_random:
+      - 0.06666667014360428
+      - 0.0
+      global_offset:
+      - 0.30000001192092896
+      - 0.0
+      rotation: 0.0
+      rotation_random: 0.0
+      color: 1.0
+      color_random: 0.5333333611488342
+      color_by_number: false
+      color_by_scale: false
+      checker_mask: false
+      horizontal_mask: false
+      vertical_mask: false
+      random_mask: 0.0
+      invert_mask: false
+      blending_mode: add
+      background_color: 0.0
+      global_opacity: 1.0
+      reverse_order: false
+  distance_0:
+    input:
+    - tile_generator_0
+    - tile_generator_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      mode: gray
+      combine: false
+      dist: 17.066667556762695
+  basecolor:
+    input:
+    - distance_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+param: {}

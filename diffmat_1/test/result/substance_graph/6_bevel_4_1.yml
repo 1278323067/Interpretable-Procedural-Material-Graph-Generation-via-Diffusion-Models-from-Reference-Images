@@ -1,0 +1,56 @@
+name: substance_graph
+nodes:
+  bitmap_0:
+    input: []
+    param: {}
+  edge_detect_0:
+    input:
+    - bitmap_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      invert_flag: false
+      edge_width: 1.0
+      edge_roundness: 5.333333492279053
+      tolerance: 0.0
+  bevel_0:
+    input:
+    - edge_detect_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      non_uniform_blur_flag: true
+      dist: -0.026666663587093353
+      smoothing: 1.5
+      normal_intensity: 0.0
+  basecolor:
+    input:
+    - bevel_0_height
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+param: {}

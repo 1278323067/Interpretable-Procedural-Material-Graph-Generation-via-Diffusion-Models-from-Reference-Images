@@ -1,0 +1,47 @@
+name: substance_graph
+nodes:
+  bnw_spots_3_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 3
+      disorder: 0.13333334028720856
+  perlin_noise_0:
+    input: []
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+      scale: 1
+      disorder: 0.1666666716337204
+  basecolor:
+    input:
+    - perlin_noise_0
+    param:
+      output_size:
+      - 0
+      - 0
+      output_format: uint8
+      pixel_size:
+      - 1.0
+      - 1.0
+      pixel_ratio: square
+      tiling: 3
+      seed: 0
+param: {}

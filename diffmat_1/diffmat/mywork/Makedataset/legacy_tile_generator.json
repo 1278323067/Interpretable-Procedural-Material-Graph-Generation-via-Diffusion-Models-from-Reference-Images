@@ -1,0 +1,17 @@
+{
+  "luminance_random": "Luminance_Variation-Contrast",
+  "pattern": "Pattern_Type",
+  "scale_random":"ScaleVariation",
+  "position_random": "Position_Random",
+  "scale": "Scale",
+  "interstice": "Interstice",
+  "position_offset": "Offset",
+  "position_offset_random": "Offset_Random",
+  "random_mask": "RandomMask",
+  "global_offset": "Global_Offset",
+  "rotation_random": "Free_Rotation",
+  "pattern_rotation": "Fixed_Rotation",
+  "pattern_rotation_random": "Fixed_Rotation_Random",
+  "x_amount": "Nb_X",
+  "y_amount": "Nb_Y"
+}

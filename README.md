@@ -50,3 +50,8 @@ python sampler.py
 
 After running this , the results are in experiment/output/
 
+You will get results like this ![](./assets/image-20250312220245366.png)
+
+2.
+
+run ./diffmat_1/test/test_hybrid_optimizer.py to get  the optimization parameters, more details see [diffmat](https://github.com/mit-gfx/diffmat/tree/master)
