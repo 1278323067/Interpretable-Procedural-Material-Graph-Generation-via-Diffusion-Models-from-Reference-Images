@@ -13,3 +13,4 @@ SVBRDF-Proceduralization/
 diffusers_1/
 *.bin
 **/__pycache__/
+mask_emb
