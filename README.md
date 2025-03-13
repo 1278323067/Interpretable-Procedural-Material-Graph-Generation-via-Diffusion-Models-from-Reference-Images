@@ -1,6 +1,4 @@
-```
 Interpretable Procedural Material Graph Generation via Diffusion Models from Reference Images
-```
 
 This is the official implementation of the paper Interpretable Procedural Material Graph Generation via Diffusion Models from Reference Images
 
@@ -20,7 +18,7 @@ conda activate timm_texture
 
 ## Dataset
 
-The dataset we released is available [here](https://pan.baidu.com/s/1G-M5hrVBHZ8QIaoTQV5QEA?pwd=87ix) , which includes images and JSON files (containing the parameter attributes of procedural nodes corresponding to the images).
+The dataset is available [here](https://pan.baidu.com/s/1G-M5hrVBHZ8QIaoTQV5QEA?pwd=87ix) , which includes images and JSON files (containing the parameter attributes of procedural nodes corresponding to the images).
 
 ![](./assets/image-20250311214057913.png)
 
@@ -55,3 +53,4 @@ You will get results like this ![](./assets/image-20250312220245366.png)
 2.
 
 run ./diffmat_1/test/test_hybrid_optimizer.py to get  the optimization parameters, more details see [diffmat](https://github.com/mit-gfx/diffmat/tree/master)
+These generated nodes and parameters can later be used in Substance Designer.
