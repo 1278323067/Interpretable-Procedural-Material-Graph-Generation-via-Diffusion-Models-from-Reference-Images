@@ -1,4 +1,4 @@
-Interpretable Procedural Material Graph Generation via Diffusion Models from Reference Images
+#Interpretable Procedural Material Graph Generation via Diffusion Models from Reference Images
 
 This is the official implementation of the paper Interpretable Procedural Material Graph Generation via Diffusion Models from Reference Images
 
@@ -52,5 +52,7 @@ You will get results like this ![](./assets/image-20250312220245366.png)
 
 2.
 
-run ./diffmat_1/test/test_hybrid_optimizer.py to get  the optimization parameters, more details see [diffmat](https://github.com/mit-gfx/diffmat/tree/master)
+run ./diffmat_1/test/test_hybrid_optimizer.py to get  the optimization parameters, more details see [diffmat](https://github.com/mit-gfx/diffmat/tree/master).
+
 These generated nodes and parameters can later be used in Substance Designer.
+![](./assets/image-20250313204617915.png)
