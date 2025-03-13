@@ -42,8 +42,8 @@ Note that:
 - --image_input: image file path
 
 ```
-cd experiment
-python sampler.py
+ 
+python experiment/sampler.py
 ```
 
 After running this , the results are in experiment/output/
